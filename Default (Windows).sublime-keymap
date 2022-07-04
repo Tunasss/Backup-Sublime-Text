@@ -1,0 +1,8 @@
+[
+	{ "keys": ["ctrl+shift+s"], "command": "auto_save" },
+	{ "keys": ["ctrl+alt+c"],
+  "command": "sublime_highlight",
+  "args": { "target": "clipboard",
+            "output_type": "rtf"
+}},
+]

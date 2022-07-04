@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"auto-save",
+		"Discord Rich Presence",
+		"Dracula Color Scheme",
+		"Highlight",
+		"Origami",
+		"Package Control",
+		"SublimeAStyleFormatter",
+		"Tabnine",
+		"Terminus",
+		"Xcode Colors",
+	],
+	"repositories":
+	[
+		"https://github.com/n1k0/SublimeHighlight/tree/python3"
+	],
+}

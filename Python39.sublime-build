@@ -1,0 +1,18 @@
+{
+    "target": "terminus_exec",
+    "cancel": "terminus_cancel_build",
+    
+    "shell_cmd": "C:\\Python39\\Python\\python.exe -u \"$file\"",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+
+    "env": {"PYTHONIOENCODING": "utf-8"},
+
+    "variants":
+    [
+        {
+            "name": "Syntax Check",
+            "shell_cmd": "D:\\.python_venvs\\general_python\\Scripts\\python.exe -m py_compile \"${file}\"",
+        }
+    ]
+}
