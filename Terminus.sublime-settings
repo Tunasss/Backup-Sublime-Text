@@ -1,0 +1,16 @@
+{
+
+	"default_config": {
+		"windows": "Cmder"
+	},
+	"shell_configs": [
+        {
+            "name": "Cmder",
+            "cmd": ["cmd.exe", "/k"],
+            "env": {},
+            "enable": true,
+            "default": true,
+            "platforms": ["windows"]
+        },
+    ],
+}
