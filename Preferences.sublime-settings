@@ -3,7 +3,7 @@
 {
 	"font_face": "SF Mono",
 	"font_options": ["Bold"],
-	"font_size": 13,
+	"font_size": 12,
 	"theme_font_options": ["Medium"],
 	"save_on_focus_lost": true,
 	"theme": "Default Dark.sublime-theme",
@@ -14,6 +14,7 @@
 	"update_check": false,
 	"hot_exit": "always",
 	"ignored_packages" :[
+		"Tabnine",
 		"Vintage",
 	],
 }
