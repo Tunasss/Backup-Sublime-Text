@@ -36,9 +36,10 @@ typedef pair <int,int> ii;
 #define all(v) (v).begin(), (v).end()
 #define FOR(i,x,y) for(ll i = x; i <= y; i++)
 #define FOS(i,x,y) for(ll i = x; i >= y; i--)
+#define EACH(i,x) for (auto &(i) : (x))
+#define el cout << '\n';
 
-//III. Định nghĩa các MAX của kiểu dữ liệu
-const ll SIZE = 1e5 + 5;
+//III. Định nghĩa các Constants
 const ll MOD = 1e9 + 7;
 
 //IV. Định nghĩa hàm Debug
@@ -49,12 +50,195 @@ const ll MOD = 1e9 + 7;
 mt19937_64 rd(chrono::steady_clock::now().time_since_epoch().count());
 ll rand(ll l, ll r) { return uniform_int_distribution<ll>(l, r)(rd); }
 
+/* Matrix Template */
+
+/*
+const ll N = 111;
+ 
+ll n;
+
+struct Matrix {
+
+int rowSize = N - 1;
+int columnSize = N - 1;
+int m[N][N] = {};
+
+Matrix(){
+    for (int i = 1; i <= rowSize; ++i) {
+        for (int j = 1; j <= columnSize; ++j) {
+            m[i][j] = 0;
+        }
+    }
+}
+
+Matrix operator * (Matrix b) {
+    Matrix C;
+    for (int i = 1; i <= rowSize; ++i) {
+        for (int j = 1; j <= b.columnSize; ++j) {
+            C.m[i][j] = 0;
+            for (int k = 1; k <= columnSize; ++k) {
+                C.m[i][j] = (C.m[i][j] + 1LL * m[i][k] * b.m[k][j] % MOD) % MOD;
+            }
+        }
+    }
+    C.rowSize = rowSize;
+    C.columnSize = b.columnSize;
+    return C;
+}
+
+Matrix identity(int n){
+    Matrix C;
+    C.rowSize = n;
+    C.columnSize = n;
+    for (int i = 1; i <= n; i++) {
+        C.m[i][i] = 1;
+    }
+    return C;
+}
+
+};
+ 
+Matrix Pow(Matrix a, ll n) {
+    if (n == 0) return a.identity(a.rowSize);
+    if (n == 1) return a;
+    if (n & 1) return Pow(a,n - 1) * a;
+    Matrix tmp = Pow(a, n / 2);
+    return tmp * tmp;
+}
+
+void print(Matrix X){
+    cout << "+-";
+    FOR(i,1,X.columnSize) cout << " - ";
+    cout << "-+\n";
+
+    for (int i = 1; i <= X.rowSize; ++i) {
+        cout << "|  ";
+        for (int j = 1; j <= X.columnSize; ++j) {
+         cout << X.m[i][j] << "  ";
+        }
+        cout << "|\n";
+    }
+    
+    cout << "+-";
+    FOR(i,1,X.columnSize) cout << " - ";
+    cout << "-+\n";
+}
+*/
+
+/* Trie Template */
+
+/*
+const ll N = 1e5 + 5;
+const ll C = 265;
+
+struct Node{
+    Node* tree[C];
+    bool end;
+};
+
+Node* newNode(){
+    Node* N = new Node;
+    FOR(i,0,256){
+        N -> tree[i] = nullptr;
+    }
+    N -> end = false;
+    return N;
+}
+
+void insert (Node* root, str s){
+    Node* v = root;
+    FOR(i,0,s.size() - 1){
+        if (v -> tree[s[i]]){
+            v -> tree[s[i]] = newNode();
+        }
+        v = v -> tree[s[i]];
+    }
+    v -> end = true;
+}
+
+bool find (Node* root, str s){
+    Node* v = root;
+    FOR(i,0,s.size() - 1){
+        if (!v -> tree[s[i]]){
+            return false;
+        }
+        if (v -> end){
+            return true;
+        }
+    }
+    return true;
+}
+*/
+
+
+/* Segment Tree Template */
+
+/*
+const int T = 1 << 20;
+const int N = 2e5 + 5;
+
+int n, q, a[N];
+ll tree[T];
+
+void build(int id, int L, int R) {
+    if (L == R) {
+        tree[id] = a[L];
+        return;
+    }
+
+    int M = (L + R) / 2;
+    build(2 * id, L, M);
+    build(2 * id + 1, M + 1, R);
+
+    tree[id] = tree[2 * id] + tree[2 * id + 1];
+}
+
+void update(int id, int L, int R, int k, int u) {
+    if (k < L || k > R) return;
+
+    if (L == R) {
+        tree[id] = u;
+        return;
+    }
+
+    int M = (L + R) / 2;
+    update(2 * id, L, M, k, u);
+    update(2 * id + 1, M + 1, R, k, u);
+
+    tree[id] = tree[2 * id] + tree[2 * id + 1];
+}
+
+ll get(int id, int L, int R, int Lq, int Rq) {
+    if (L > Rq || R < Lq)
+        return 0;
+    if (Lq <= L && R <= Rq)
+        return tree[id];
+
+    int M = (L + R) / 2;
+    ll t1 = get(2 * id, L, M, Lq, Rq);
+    ll t2 = get(2 * id + 1, M + 1, R, Lq, Rq);
+
+    return t1 + t2;
+}
+
+void print(int id = 1, int L = 1, int R = n) {
+    if (L == R) {
+        dbg(id), dbg(L), dbg(R);
+        dbge(tree[id]);
+        return;
+    }
+    int M = (L + R) / 2;
+    print(2 * id, L, M);
+    print(2 * id + 1, M + 1, R);
+}
+*/
+
+
 signed main()
 {
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     //freopen(file".INP","r",stdin);
     //freopen(file".OUT","w",stdout);
-    cerr << "RUNNING:" << endl;
 
     cerr << "\nTime: " << clock() / double(CLOCKS_PER_SEC) << " sec.\n";
     return 0;
@@ -63,6 +247,4 @@ signed main()
 ]]></content>
   <tabTrigger>tat</tabTrigger>
   <description>TEMPLATE CỰC VIP!</description>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <!-- <scope >source.python</scope > -->
 </snippet>
