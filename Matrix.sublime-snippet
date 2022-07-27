@@ -39,6 +39,14 @@ int rowSize = N - 1;
 int columnSize = N - 1;
 int m[N][N] = {};
 
+Matrix(){
+    for (int i = 1; i <= rowSize; ++i) {
+        for (int j = 1; j <= columnSize; ++j) {
+            m[i][j] = 0;
+        }
+    }
+}
+
 Matrix operator * (Matrix b) {
     Matrix C;
     for (int i = 1; i <= rowSize; ++i) {
@@ -54,9 +62,20 @@ Matrix operator * (Matrix b) {
     return C;
 }
 
+Matrix identity(int n){
+    Matrix C;
+    C.rowSize = n;
+    C.columnSize = n;
+    for (int i = 1; i <= n; i++) {
+        C.m[i][i] = 1;
+    }
+    return C;
+}
+
 };
  
 Matrix Pow(Matrix a, ll n) {
+    if (n == 0) return a.identity(a.rowSize);
     if (n == 1) return a;
     if (n & 1) return Pow(a,n - 1) * a;
     Matrix tmp = Pow(a, n / 2);
@@ -99,12 +118,14 @@ signed main()
 
     // print(base);
     
+    Matrix ans = Pow(D, ) * base;
+
+    // print(ans);
+
     return 0;
 }
 
 ]]></content>
   <tabTrigger>mt</tabTrigger>
   <description>Matrix Template</description>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <!-- <scope >source.python</scope > -->
 </snippet>
