@@ -9,8 +9,9 @@
     "working_dir": "${file_path}",
 
     // "shell_cmd": "g++ -std=c++11 -Wall -O2 \"${file}\" -o \"${file_path}/${file_base_name}\" && echo Running... && \"${file_path}/${file_base_name}\"",
-    "shell_cmd": "g++ -std=c++11 -O2 -Wall \"${file}\" -o \"${file_path}/${file_base_name}\" && echo Running... && \"$file_base_name\" && cmd /k",
+    "shell_cmd": "g++ -std=c++17 -O2 \"${file}\" -o \"${file_path}/${file_base_name}\" && echo Running... && \"$file_base_name\" && cmd /k",
     // "shell_cmd": "g++ -std=c++11 -Wall -O2 \"${file}\" -o \"${file_path}/${file_base_name}\" && echo Running... && \"${file_path}/${file_base_name}\"",
+    
     "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
     "selector": "source.c++, source.cpp, source.cc, source.cxx",
 }
