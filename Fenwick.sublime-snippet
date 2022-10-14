@@ -1,6 +1,7 @@
 <snippet>
   <content><![CDATA[
 #include <bits/stdc++.h>
+#include <unordered_map>
 using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
@@ -10,6 +11,10 @@ typedef pair <int,int> ii;
 #define st first
 #define nd second
 #define pb push_back
+#define lb lower_bound
+#define ub upper_bound
+#define er equal_range
+#define bin binary_search
 #define vll vector<ll>
 #define vi vector<int>
 #define all(v) (v).begin(), (v).end()
@@ -18,28 +23,38 @@ typedef pair <int,int> ii;
 #define EACH(i,x) for (auto &(i) : (x))
 #define el cout << '\n';
 const ll MOD = 1e9 + 7;
-
 #define dbg(...) cerr << "[" << #__VA_ARGS__ ": " << (__VA_ARGS__) << "]  "
 #define dbge(...) cerr << "[" << #__VA_ARGS__ ": " << (__VA_ARGS__) << "]" << endl;
-
-/*
 mt19937_64 rd(chrono::steady_clock::now().time_since_epoch().count());
 ll rand(ll l, ll r) { return uniform_int_distribution<ll>(l, r)(rd); }
-*/
 
-//#define int long long
 const ll N = 2e5 + 5;
+ll BIT[N];
+ 
+void add(ll pos, ll val){
+    for (ll i = pos; i <= n; i += (i & (-i)) ){
+        BIT[i] += val;
+    }
+}
+
+ll take(ll pos) {
+    ll res = 0;
+    for (ll i = pos; i >= 1; i -= (i & (-i)) ){
+        res += BIT[i];
+    }
+    return res;
+}
 
 signed main()
 {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	
-	return 0;
+    ios_base::sync_with_stdio(0);cin.tie(0);
+    //freopen(file".INP","r",stdin);
+    //freopen(file".OUT","w",stdout);
+
+    return 0;
 }
 
 ]]></content>
-  <tabTrigger>cf</tabTrigger>
-  <description>Default Template</description>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <!-- <scope >source.python</scope > -->
+  <tabTrigger>bit</tabTrigger>
+  <description>BIT Template</description>
 </snippet>

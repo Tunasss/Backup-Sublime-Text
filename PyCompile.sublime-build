@@ -2,7 +2,7 @@
     "target": "terminus_exec",
     "cancel": "terminus_cancel_build",
     
-    "shell_cmd": "C:\\Python39\\Python\\python.exe -u \"$file\"",
+    "shell_cmd": "C:\\Users\\Tunass\\AppData\\Local\\Programs\\Python\\Python310\\python.exe -u \"$file\"",
     "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
     "selector": "source.python",
 

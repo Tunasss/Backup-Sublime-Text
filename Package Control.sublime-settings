@@ -6,7 +6,6 @@
 	"installed_packages":
 	[
 		"auto-save",
-		"Discord Rich Presence",
 		"Dracula Color Scheme",
 		"Highlight",
 		"Origami",
@@ -14,7 +13,6 @@
 		"SublimeAStyleFormatter",
 		"Tabnine",
 		"Terminus",
-		"Xcode Colors",
 	],
 	"repositories":
 	[

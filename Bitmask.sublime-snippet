@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+#define count_bit(a) (__builtin_popcount(a))
+#define count_zero(a) (__builtin_clz(a))
+#define getbit(a, b) ((a >> b) & 1)
+#define onbit(a, b) (&a += (1 << b))
+#define offbit(a, b) (&a -= (1 << b))
+
+]]></content>
+  <tabTrigger>bmask</tabTrigger>
+  <description>Bitmask Defines</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

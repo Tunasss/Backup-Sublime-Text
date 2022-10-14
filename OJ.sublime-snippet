@@ -12,8 +12,6 @@ typedef pair <int,int> ii;
 #define pb push_back
 #define lb lower_bound
 #define ub upper_bound
-#define er equal_range
-#define bin binary_search
 #define vll vector<ll>
 #define vi vector<int>
 #define all(v) (v).begin(), (v).end()
